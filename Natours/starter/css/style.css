@@ -1,31 +1,43 @@
 /*
 COLORS:
 
-Light green: #7ed56f
+Light green: #7ed56f rgba(126, 213, 111, 0.75)
 Medium green: #55c57a
-Dark green: #28b485
+Dark green: #28b485 rgba(40, 180, 131, 0.75)
+
+Picton blue:#39A9DB rgba(57, 169, 219,0.55)
+Aero blue: #40BCD8 rgba(64, 188, 216,0.55)
+light green: #99F7AB rgba(153, 247, 170, 0.514)
 
 */
-* {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: inherit;
+}
+
+:root{
+    font-size: 62.5%;
+
 }
 body {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
-    font-size: 16px;
     line-height: 1.7;
     color: #777;
-    padding: 30px;
+    padding: 3rem;
+    box-sizing: border-box;
 }
 
 .header{
     height: 95vh;
     background-image: linear-gradient(
-        to right bottom, 
-        rgba(126, 213, 111, 0.75),
-        rgba(40, 180, 131, 0.75)), 
+        to right bottom,
+        rgba(153, 247, 170, 0.514),
+        rgba(64, 188, 216,0.55)
+        ), 
         url(../img/hero.jpg);
     background-size: cover;
     background-position: top;
@@ -35,12 +47,12 @@ body {
 
 .logo-box{
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
 }
 
 .logo{
-    height: 35px;
+    height: 3.5rem;
 }
 
 .text-box{
@@ -48,21 +60,24 @@ body {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .heading-primary{
-    color: #fff;
+    color: rgb(247, 247, 255);
     text-transform: uppercase;
 
     backface-visibility: hidden;
+
+    margin-bottom: 6rem;
 }
 
 .heading-primary-main{
     display: block;
     
-    font-size: 60px;
-    font-weight: 400;
-    letter-spacing: 35px;
+    font-size: 6rem;
+    font-weight: 700;
+    letter-spacing:3.5rem;
 
     animation-name: moveInLeft;
     animation-duration: 900ms;
@@ -73,9 +88,9 @@ body {
 .heading-primary-sub{
     display: block;
     
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 17.4px;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 1.75rem;
 
     animation: moveInRight 900ms 200ms ease-in-out;
     /*animation-name: moveInRight;
@@ -87,11 +102,11 @@ body {
 @keyframes moveInLeft {
     0%{
         opacity: 0;
-        transform: translateX(-100px);
+        transform: translateX(-10rem);
     }
 
     80%{
-        transform: translateX(15px);
+        transform: translateX(1.5rem);
     }
     
     100%{
@@ -103,15 +118,41 @@ body {
 @keyframes moveInRight {
     0%{
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateX(10rem);
     }
 
     80%{
-        transform: translateX(-15px);
+        transform: translateX(-1.5rem);
     }
     
     100%{
         opacity: 1;
         transform: translate(0);
     }
+}
+
+.btn:link,
+.btn:visited{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 10rem;
+    transition: all .2s ease-in-out;
+    font-size: 1.6rem;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+    box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.363);
+}
+.btn:active{
+    transform: scale(0.98);
+    box-shadow:  0rem .5rem 1rem rgba(0, 0, 0, 0.363);
+}
+.btn-white{
+    background:#fff;
+    color: #777;
+    box-shadow: .3rem .3rem .5rem rgba(0, 0, 0, 0.363);
 }
